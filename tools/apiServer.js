@@ -26,15 +26,17 @@ app.get("/parlors", async (req, res, next) => {
               parlor.reviews.push(reviews[0]);
             }
           });
-          res.send(parlors);
+          console.log("success");
+          return res.send(parlors);
         } catch (err) {
-          next(err, req, res, next);
+          console.log("fail");
+          return next(err);
         }
       }
     }
-    next($`Response code was {response.status}`);
+    return next("Response code was" + response.status);
   } catch (err) {
-    next(err);
+    return next(err);
   }
 });
 
@@ -48,14 +50,16 @@ app.get("/parlors/:id", async (req, res, next) => {
       try {
         let reviews = await getParlorReviews(id);
         parlor.reviews = reviews;
-        res.send(parlor);
+        console.log("success");
+        return res.send(parlor);
       } catch (err) {
-        next(err);
+        console.log("fail");
+        return next(err);
       }
     }
-    next($`Response code was {response.status}`);
+    return next("Response code was " + response.status);
   } catch (err) {
-    next(err);
+    return next(err);
   }
 });
 
@@ -89,7 +93,7 @@ const errorHandler = (err, req, res, next) => {
 
 const logErrors = (err, req, res, next) => {
   console.error(err.stack);
-  next(err);
+  return next(err);
 };
 
 app.use(errorHandler);
