@@ -9,23 +9,20 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 5s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.loader {
+  position: absolute;
+  top: calc(50% - 8em);
+  left: calc(50% - 10em);
+  width: 6em;
+  height: 6em;
 }
 
-.App-link {
-  color: #61dafb;
+.loader--hide {
+  opacity: 0;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +32,36 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.row {
+  width: 100%;
+}
+
+.card {
+  margin: 20px;
+}
+
+.rating {
+  padding-top: 10px;
+}
+
+.star-ratings {
+  padding-bottom: 10px;
+}
+
+.nav-item {
+  padding-right: 10px;
+}
+
+.brand {
+  padding-right: 15px;
+}
+
+header {
+  font-weight: bold;
+}
+
+.review-summary {
+  margin-top: 10px;
 }
