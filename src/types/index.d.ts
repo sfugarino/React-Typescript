@@ -67,26 +67,3 @@ export interface Business {
   transactions?: Direction[];
   reviews?: Review[];
 }
-
-export interface StarOptions {
-  fillId: string;
-  changeRating?: MouseEvent<HTMLDivElement, MouseEvent>;
-  hoverOverStar?: MouseEvent<HTMLDivElement, MouseEvent>;
-  unHoverOverStar?: MouseEvent<HTMLDivElement, MouseEvent>;
-  isStarred: boolean;
-  isPartiallyFullStar: boolean;
-  isHovered: boolean;
-  hoverMode: boolean;
-  isCurrentHoveredStar: boolean;
-  isFirstStar: boolean;
-  isLastStar: boolean;
-  starDimension: string;
-  starSpacing: string;
-  starHoverColor: string;
-  starRatedColor: string;
-  starEmptyColor: string;
-  gradientPathName: string;
-  ignoreInlineStyles: boolean;
-  svgIconPath: string;
-  svgIconViewBox: string;
-}

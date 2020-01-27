@@ -1,9 +1,24 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render } from "@testing-library/react";
+import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
+test("renders about link", () => {
+  const { getByText } = render(
+    <Router>
+      <App />
+    </Router>
+  );
+  const linkElement = getByText(/about/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+test("renders home link", () => {
+  const { getByText } = render(
+    <Router>
+      <App />
+    </Router>
+  );
+  const linkElement = getByText(/home/i);
   expect(linkElement).toBeInTheDocument();
 });
